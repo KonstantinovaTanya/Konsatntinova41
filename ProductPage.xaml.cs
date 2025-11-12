@@ -23,6 +23,8 @@ namespace Konstantinova41
         public ProductPage()
         {
             InitializeComponent();
+            var currentProduct = Konstantinova41Entities.GetContext().Product.ToList();
+            ProductListView.ItemsSource = currentProduct;
         }
 
         private void Button_Click (object sender, RoutedEventArgs e)

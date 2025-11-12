@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Konstantinova41"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" FontFamily="Comic Sans MS" Icon="/Res/icon.ico">
+        Title="Konstantinova 41" WindowState="Maximized" FontFamily="Comic Sans MS" Icon="/Res/icon.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"></RowDefinition>
@@ -17,9 +17,7 @@
         <Image Source="/Res/logo.png" HorizontalAlignment="Left"/>
         <TextBlock Text="41 размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
 
-        <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
-
-        <Button Content="Назад" Name="BtnBack" Click="BtnBack_Click" HorizontalAlignment="Right"></Button>
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
 
     </Grid>
 </Window>
