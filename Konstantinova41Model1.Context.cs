@@ -13,18 +13,18 @@ namespace Konstantinova41
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Konstantinova41Entities : DbContext
+    public partial class Konstantinova41Entities1 : DbContext
     {
-        private static Konstantinova41Entities _context;
-        public static Konstantinova41Entities GetContext()
+        private static Konstantinova41Entities1 _context;
+
+        public static Konstantinova41Entities1 GetContext()
         {
-            if(_context == null)
-                _context = new Konstantinova41Entities();
-            
+            if (_context == null)
+                _context = new Konstantinova41Entities1();
             return _context;
         }
-        public Konstantinova41Entities()
-            : base("name=Konstantinova41Entities")
+        public Konstantinova41Entities1()
+            : base("name=Konstantinova41Entities1")
         {
         }
     

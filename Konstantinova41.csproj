@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -64,30 +64,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Konstantinova41Model.cs">
+    <Compile Include="AuthPage.xaml.cs">
+      <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Konstantinova41Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Konstantinova41Model.tt</DependentUpon>
+      <DependentUpon>Konstantinova41Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
-      <DependentUpon>Konstantinova41Model.tt</DependentUpon>
+      <DependentUpon>Konstantinova41Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderProduct.cs">
-      <DependentUpon>Konstantinova41Model.tt</DependentUpon>
+      <DependentUpon>Konstantinova41Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PicupPoint.cs">
-      <DependentUpon>Konstantinova41Model.tt</DependentUpon>
+      <DependentUpon>Konstantinova41Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>Konstantinova41Model.tt</DependentUpon>
+      <DependentUpon>Konstantinova41Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>Konstantinova41Model.tt</DependentUpon>
+      <DependentUpon>Konstantinova41Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>Konstantinova41Model.tt</DependentUpon>
+      <DependentUpon>Konstantinova41Model1.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,15 +109,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Konstantinova41Model.Context.cs">
+    <Compile Include="Konstantinova41Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Konstantinova41Model.Context.tt</DependentUpon>
+      <DependentUpon>Konstantinova41Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Konstantinova41Model.Designer.cs">
+    <Compile Include="Konstantinova41Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Konstantinova41Model.edmx</DependentUpon>
+      <DependentUpon>Konstantinova41Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -143,12 +150,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Konstantinova41Model.edmx">
+    <EntityDeploy Include="Konstantinova41Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Konstantinova41Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>Konstantinova41Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Konstantinova41Model.edmx.diagram">
-      <DependentUpon>Konstantinova41Model.edmx</DependentUpon>
+    <None Include="Konstantinova41Model1.edmx.diagram">
+      <DependentUpon>Konstantinova41Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -165,16 +172,6 @@
     <Resource Include="Res\picture.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Konstantinova41Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Konstantinova41Model.Context.cs</LastGenOutput>
-      <DependentUpon>Konstantinova41Model.edmx</DependentUpon>
-    </Content>
-    <Content Include="Konstantinova41Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Konstantinova41Model.edmx</DependentUpon>
-      <LastGenOutput>Konstantinova41Model.cs</LastGenOutput>
-    </Content>
     <Resource Include="Res\B320R5.jpg" />
     <Resource Include="Res\D329H3.jpg" />
     <Resource Include="Res\D572U8.jpg" />
@@ -188,6 +185,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Konstantinova41Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Konstantinova41Model1.edmx</DependentUpon>
+      <LastGenOutput>Konstantinova41Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Konstantinova41Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Konstantinova41Model1.edmx</DependentUpon>
+      <LastGenOutput>Konstantinova41Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

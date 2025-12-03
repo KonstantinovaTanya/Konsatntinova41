@@ -13,11 +13,12 @@
             <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid Background="#FFFFCC99"></Grid>
+        <Grid Grid.Row="0" Background="#FFFFCC99" Margin="0"></Grid>
+        <Grid Grid.Row="2" Background="#FFFFCC99"></Grid>
         <Image Source="/Res/logo.png" HorizontalAlignment="Left"/>
         <TextBlock Text="41 размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
 
-        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
-
+        <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
+        <Button Content="Назад" Name="ButtonBack" HorizontalAlignment="Right" Click="ButtonBack_Click"></Button>
     </Grid>
 </Window>

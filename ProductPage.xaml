@@ -9,9 +9,58 @@
       Title="ProductPage" FontFamily="Comic Sans MS">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#FFFFCC99" Margin="0"></Grid>
+        <Grid Grid.Row="1" Background="#FFFFCC99" Margin="0"></Grid>
+        <Grid Grid.Row="2" Background="#FFFFCC99" Margin="0"></Grid>
         
-        
-        <ListView Name="ProductListView" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <StackPanel  Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Вы авторизованы как: " FontSize="20" VerticalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="FIOTB" Text="" FontSize="20" VerticalAlignment="Center"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Name="RoleSP" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Роль: " FontSize="20" VerticalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="RoleTB" Text="" FontSize="20" VerticalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBlock Text="Введите текст для поиска" FontSize="20" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="300" Height="30" FontSize="15" HorizontalAlignment="Center"></TextBox>
+            </StackPanel>
+
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBlock Text="Выберите скидку для поиска" FontSize="20" VerticalAlignment="Center"></TextBlock>
+                <ComboBox Name="ComboType" SelectionChanged="ComboType_SelectionChanged" Width="200" Height="30" FontSize="15">
+                    <TextBlock>Все</TextBlock>
+                    <TextBlock>от 0 до 9,99%</TextBlock>
+                    <TextBlock>от 10 до 14,99%</TextBlock>
+                    <TextBlock>от 15 и более</TextBlock>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="10" Orientation="Vertical">
+                <RadioButton Content="По возрастанию стоимости" Name="RBtnUp" GroupName="Sort" Checked="RBtnUp_Checked" Width="300" FontSize="20"></RadioButton>
+                <RadioButton Content="По убыванию стоимости" Name="RBtnDown" GroupName="Sort" Checked="RBtnDown_Checked" Width="300" FontSize="20"></RadioButton>
+            </StackPanel>
+            
+            
+        </WrapPanel>
+
+        <TextBlock Name="TBlockRecordCount" Grid.Row="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+
+
+        <ListView Name="ProductListView" Grid.Row="3" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ProductListView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
